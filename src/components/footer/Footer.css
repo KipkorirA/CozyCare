@@ -1,0 +1,56 @@
+/* Footer Styling */
+.footer {
+    background-color: #085846; /* Dark background for the footer */
+    color: white; /* White text color */
+    padding: 2rem 0; /* Padding for top and bottom */
+    text-align: center; /* Center align text */
+}
+
+.footer-content {
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.footer-section {
+    margin: 1rem 0; /* Margin for spacing */
+}
+
+.quick-links ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex; /* Flexbox for links */
+    justify-content: center; /* Center align links */
+}
+
+.quick-links li {
+    margin: 0 1rem; /* Space between links */
+}
+
+.quick-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Transition effect */
+}
+
+.quick-links a:hover {
+    color: #f0a500; /* Change color on hover */
+}
+
+/* Copyright Section */
+.footer-bottom {
+    margin-top: 1rem; /* Space above copyright */
+    font-size: 0.9rem; /* Smaller font size for copyright */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quick-links ul {
+        flex-direction: column; /* Stack links vertically on small screens */
+    }
+
+    .quick-links li {
+        margin: 0.5rem 0; /* Space between links vertically */
+    }
+}

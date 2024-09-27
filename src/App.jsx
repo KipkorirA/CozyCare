@@ -1,32 +1,39 @@
 // import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import AboutPage from './pages/AboutPage';
-import ServicesPage from './pages/ServicesPage';
-import FeedbackPage from './pages/FeedbackPage';
-import ContactPage from './pages/ContactPage';
-import PricingPage from './pages/PricingPage';
-import CareersPage from './pages/CareersPage';
-import './styles/App.css'; 
+import Footer from './components/footer/Footer';
+import HomeSection from './components/home/Home';
+import AboutSection from './components/about/About';
+import ServicesSection from './components/services/Services';
+import PricingSection from './components/pricing/Pricing';
+import CareersSection from './components/careers/Careers';
+import FeedbackSection from './components/feedback/Feedback';
+import ContactSection from './components/contact/ContactForm';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
-    return (
-        <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/services" element={<ServicesPage />} />
-                <Route path="/feedback" element={<FeedbackPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/pricing" element={<PricingPage />} />
-                <Route path="/careers" element={<CareersPage />} />
-            </Routes>
-            <Footer />
-        </Router>
-    );
+  return (
+    <Router>
+      <div>
+        {/* Navbar at the top */}
+
+
+        {/* Routes for each section */}
+        <main>
+          <section id="all-sections">
+            <HomeSection />
+            <AboutSection />
+            <ServicesSection />
+            <FeedbackSection />
+            <PricingSection />
+            <CareersSection />
+            <ContactSection />
+          </section>
+        </main>
+        
+        {/* Footer at the bottom */}
+        <Footer />
+      </div>
+    </Router>
+  );
 };
 
 export default App;

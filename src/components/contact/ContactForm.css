@@ -1,0 +1,115 @@
+/* Contact Section Styling */
+.contact-section {
+    padding: 4rem 2rem;
+    background-color: #085846;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 700px;
+    color: white; /* This will make the text inside the form white */
+    background-color: #085846;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.input-box {
+    width: 48%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #00a879;
+    background-color: #00a879;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
+    color: white; /* Set text color to white */
+}
+
+/* Placeholder color styling */
+.input-box::placeholder {
+    color: white; /* Placeholder text color */
+}
+
+.input-box:focus::placeholder {
+    color: black; /* Change placeholder text color to black on focus */
+}
+
+.input-box:focus {
+    border-color: white; /* Change border color to white on focus */
+    background-color: #004d45; /* Optional: Change background on focus */
+}
+
+.message-box {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    background-color: #00a879;
+    border-radius: 5px;
+    height: 150px;
+    outline: none;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
+    color: white; /* Set text color to white */
+}
+
+/* Placeholder color styling for the message box */
+.message-box::placeholder {
+    color: white; /* Placeholder text color */
+}
+
+.message-box:focus::placeholder {
+    color: black; /* Change placeholder text color to black on focus */
+}
+
+.message-box:focus {
+    border-color: white; /* Change border color to white on focus */
+    background-color: #004d45; /* Optional: Change background on focus */
+}
+
+/* reCAPTCHA Styling */
+.recaptcha-box {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    background-color: #00a879;
+    color: white; /* Set text color to white */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e69500;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .input-box {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}

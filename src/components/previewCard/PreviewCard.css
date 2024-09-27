@@ -1,0 +1,58 @@
+/* PreviewCard Styling */
+.preview-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 300px;
+    margin: 1rem;
+}
+
+.preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.preview-card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.preview-card-content {
+    padding: 1rem;
+}
+
+.preview-card-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.preview-card-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.preview-card-link {
+    color: #f0a500;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.preview-card-link:hover {
+    color: #e69500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .preview-card {
+        max-width: 100%;
+    }
+}

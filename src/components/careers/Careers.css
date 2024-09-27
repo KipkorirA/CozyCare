@@ -1,0 +1,97 @@
+/* Careers Section Styling */
+.careers-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+    background-color: #a8c2b2;
+}
+
+/* Left Side - Title and Earth Image */
+.careers-left {
+    width: 45%;
+    text-align: left;
+}
+
+.careers-left h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.careers-divider {
+    width: 80%;
+    border: 2px solid #f0a500; /* Golden line */
+    margin-bottom: 1.5rem;
+}
+
+.earth-image {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 1rem;
+}
+
+/* Right Side - Heading, Text, and Links */
+.careers-right {
+    width: 50%;
+}
+
+.careers-right h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.careers-right p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Careers Button - Explore Careers */
+.careers-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin-top: 20px;
+    background-color: #085846;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 10rem;
+}
+
+.careers-button:hover {
+    background-color: #021f18;
+    transform: translateY(-3px);
+}
+
+/* Small Paragraph Link - Ensuring links are on separate lines */
+.small-paragraph-link {
+    font-size: 0.9rem;
+    color: #000408; /* Link color */
+    text-decoration: underline;
+    margin-top: 20px;
+    display: block; /* Changed to block to ensure each link is on a separate line */
+    margin-bottom: 10px; /* Optional: add some space between each link */
+}
+
+.small-paragraph-link:hover {
+    color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .careers-section {
+        flex-direction: column;
+    }
+
+    .careers-left,
+    .careers-right {
+        width: 100%;
+    }
+}
