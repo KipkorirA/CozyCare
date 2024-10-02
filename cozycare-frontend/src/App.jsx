@@ -1,3 +1,4 @@
+// Import React and necessary components
 // import React from 'react';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
@@ -16,6 +17,7 @@ import FeedbackPage from './pages/FeedbackPage';
 import ContactPage from './pages/ContactPage';
 import SubscribePage from './pages/SubscribePage'; // Import the SubscribePage
 import TermsOfUsePage from './pages/TermsOfUsePage'; // Import the TermsOfUsePage
+import PrivacyAndCookiePolicyPage from './pages/PrivacyAndCookiePolicyPage'; // Import Privacy Policy Page
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
@@ -28,7 +30,6 @@ const App = () => {
         {/* Routes for each section and page */}
         <main>
           <Routes>
-            {/* Define routes for each page */}
             <Route path="/" element={
               <>
                 <HomeSection />
@@ -46,8 +47,9 @@ const App = () => {
             <Route path="/careers" element={<CareersPage />} />
             <Route path="/feedback" element={<FeedbackPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/subscribe" element={<SubscribePage />} /> {/* Add SubscribePage route */}
-            <Route path="/terms-of-use" element={<TermsOfUsePage />} /> {/* Add TermsOfUsePage route */}
+            <Route path="/subscribe" element={<SubscribePage />} />
+            <Route path="/terms-of-use" element={<TermsOfUsePage />} />
+            <Route path="/privacy-policy" element={<PrivacyAndCookiePolicyPage />} /> {/* Add Privacy Policy Page */}
           </Routes>
         </main>
 
