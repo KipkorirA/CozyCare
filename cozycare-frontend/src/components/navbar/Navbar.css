@@ -1,0 +1,193 @@
+/* Navbar default styles */
+@font-face {
+    font-family: 'Hoves Pro'; 
+    src: url('cozycare-frontend/public/fonts/TT Hoves Pro Trial Condensed ExtraBold.ttf') format('truetype'); 
+    
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar {
+    font-family: 'Hoves Pro', sans-serif; /* Use Hoves Pro font */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 5px 20px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out items: logo, links, and subscribe */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* Add pseudo-element for faded background image */
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/Navbar-baground.png'); /* Background image path */
+    background-size: cover; /* Ensure the background covers the navbar */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background repetition */
+    opacity: 0.1; /* Adjust opacity to fade the image */
+    z-index: -1; /* Place it behind the navbar content */
+}
+
+/* Navbar hiding (moving up) */
+.navbar-hide {
+    transform: translateY(-100%);
+}
+
+/* Navbar showing (default) */
+.navbar-show {
+    transform: translateY(0);
+}
+
+/* Logo styles */
+.navbar-logo {
+    flex: 1; /* Allow logo to take available space on the left */
+}
+
+.navbar-logo img {
+    width: 100px;
+    height: auto;
+}
+
+/* Navigation links */
+.navbar-links-container {
+    display: flex; /* Use flexbox for navbar links container */
+    align-items: center; /* Center items vertically */
+    flex: 2; /* Allow links to take more space to center them */
+}
+
+.navbar-links {
+    list-style-type: none;
+    display: flex; /* Use flexbox for nav links */
+    gap: 30px; /* Space between nav links */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    display: inline-block;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 2.5rem; /* Font size for nav links */
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.navbar-links a:hover {
+    color: #f0a500;
+}
+
+/* Subscribe link styles */
+.navbar-subscribe {
+    display: flex; /* Use flexbox for the subscribe area */
+    align-items: center; /* Center the subscribe icon vertically */
+    margin-left: auto; /* Push subscribe button to the right */
+    background-color: transparent; /* Ensure no background color */
+}
+
+.subscribe-icon {
+    color: white;
+    cursor: pointer;
+    font-size: 2.5rem; /* Match nav link size */
+    transition: color 0.3s ease;
+}
+
+.subscribe-icon:hover {
+    color: #f0a500;
+}
+
+/* Page-specific navbar colors */
+.navbar-home {
+    background-color: #085846; /* Adjust transparency if needed */
+}
+
+.navbar-about {
+    background-color: #085846; /* Adjust transparency if needed */
+}
+
+.navbar-pricing {
+    background-color: #085846; /* Adjust transparency if needed */
+}
+
+.navbar-careers {
+    background-color: #085846; /* Adjust transparency if needed */
+}
+
+.navbar-contact {
+    background-color: #085846; /* Adjust transparency if needed */
+}
+
+.navbar-subscribe{
+    background-color: #085846; 
+}
+
+/* Mobile and smaller screens (max-width: 1000px) */
+@media (max-width: 1000px) {
+    .navbar-text {
+        display: none; /* Hide text on smaller screens */
+    }
+
+    .navbar-icon {
+        display: inline-block; /* Show icons on smaller screens */
+    }
+}
+
+/* Larger screens (min-width: 1001px) */
+@media (min-width: 1001px) {
+    .navbar-icon {
+        display: none !important; /* Ensure icons are hidden on larger screens */
+    }
+
+    .navbar-text {
+        display: inline-block; /* Show text on larger screens */
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding-top: 0;
+    }
+
+    .navbar {
+        padding: 1rem;
+        font-size: 1rem;
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+
+    .navbar-logo img {
+        width: 80px; /* Smaller logo for mobile */
+    }
+
+    /* Stack navigation links vertically for mobile */
+    .navbar-links {
+        flex-direction: row; /* Keep links in a row but show only icons */
+        justify-content: space-around;
+        width: 100%; /* Full width */
+    }
+
+    /* Adjust icon sizes for mobile */
+    .navbar-icon {
+        font-size: 2rem; /* Larger icon size on smaller screens */
+    }
+
+    /* Adjust subscribe icon size on mobile */
+    .subscribe-icon {
+        font-size: 2rem; /* Larger icon size on smaller screens */
+    }
+}

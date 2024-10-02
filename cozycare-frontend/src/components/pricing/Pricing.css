@@ -1,0 +1,168 @@
+/* Pricing Section Styling */
+.pricing-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+    background-color: #dad4d47e;
+}
+
+/* Left Side - Pricing Info */
+.pricing-info {
+    width: 60%;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.pricing-info h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.pricing-divider {
+    width: 80%;
+    border: 2px solid #f0a500; /* Golden color */
+    margin-bottom: 1.5rem;
+}
+
+.pricing-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #555;
+    padding-right: 80px;
+}
+
+.pricing-info ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.pricing-info ul li {
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+/* Right Side - Image and Additional Info */
+.pricing-image-content {
+    width: 50%;
+}
+
+.image-with-text {
+    position: relative;
+    text-align: center;
+    width: 90%;
+}
+
+.pricing-image-box {
+    width: 90%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.image-text {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    color: black;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 0.8vw; /* Use viewport width for responsive text size */
+    text-align: left;
+    width: 70%; /* Ensure text width is relative to the image size */
+
+}
+
+.image-text ul {
+    list-style-type: disc;
+    margin-top: 0.5rem;
+}
+
+.image-text ul li {
+    margin-bottom: 0.5rem;
+}
+
+.pricing-image-content p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #042e25;
+    line-height: 1.6;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    background-color: #042e25;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: #54810c;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pricing-section {
+        flex-direction: column;
+    }
+
+    .pricing-info,
+    .pricing-image-content {
+        width: 100%;
+    }
+
+    /* Reduce font sizes on smaller screens */
+    .pricing-info h1 {
+        font-size: 2rem; /* Smaller title on mobile */
+    }
+
+    .pricing-info p, 
+    .pricing-image-content p {
+        font-size: 1rem; /* Smaller paragraph text */
+    }
+
+    .image-text {
+        font-size: 1.5rem; /* Reduce text size inside the image */
+        width: 70%; /* Adjust text width based on the image size */
+        padding: 0.8rem; /* Reduce padding */
+    }
+
+    .contact-link {
+        font-size: 1rem; /* Smaller button text */
+        padding: 0.6rem 1.5rem; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Extra small screens (max-width: 480px) */
+@media (max-width: 1000px) {
+    .pricing-info h1 {
+        font-size: 1.8rem; /* Further reduction for very small screens */
+    }
+
+    .pricing-info p, 
+    .pricing-image-content p {
+        font-size: 0.9rem; /* Smaller paragraph text */
+    }
+
+    .image-text {
+        font-size: 0.45rem; /* Smaller text inside the image */
+        padding: 0.7rem; /* Reduce padding */
+    }
+
+    .contact-link {
+        font-size: 0.9rem; /* Further reduction for button text */
+        padding: 0.5rem 1.2rem; /* Adjust padding for very small screens */
+    }
+}
