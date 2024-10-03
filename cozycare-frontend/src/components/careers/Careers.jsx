@@ -9,14 +9,18 @@ const Careers = () => {
             <div className="careers-left">
                 <h1>CAREERS</h1>
                 <hr className="careers-divider" />
-                <img src="public/images/Pirateship.webp" alt="Earth" className="earth-image" />
+                <img src="/images/Pirateship.webp" alt="A pirate ship representing adventure and teamwork" className="earth-image" />
             </div>
 
             {/* Right Division: Information and Links */}
             <div className="careers-right">
                 <h2>Join Our Team</h2>
-                <p>At CozyCare, we are committed to providing top-notch care and support. We are always looking for passionate professionals to join our growing team.</p>
-                <p>If you are driven, compassionate, and want to make a difference, we would love to hear from you.</p>
+                <p>
+                    At CozyCare, we are committed to providing top-notch care and support. We are always looking for passionate professionals to join our growing team.
+                </p>
+                <p>
+                    If you are driven, compassionate, and want to make a difference, we would love to hear from you.
+                </p>
 
                 {/* Link to Careers Page */}
                 <Link to="/careers" className="careers-button">

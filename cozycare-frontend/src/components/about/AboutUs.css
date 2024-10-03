@@ -1,12 +1,4 @@
 /* Importing Sigher font */
-/* Importing TT Hoves font */
-@font-face {
-    font-family: 'TT Hoves';
-    src: url('/path/to/TT_Hoves-Regular.woff2') format('woff2'), /* Replace with actual font file path */
-         url('/path/to/TT_Hoves-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 /* Additional font weights can be added similarly */
 /* About Us Section */
@@ -191,11 +183,16 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 908px) {
     .about-us-section {
         flex-direction: column;
         text-align: center;
     }
+
+    .seed-shaped {
+    height: 320px; /* Further reduce height for small screens */
+    }
+        
 
     .about-us-carousel,
     .about-us-text {
@@ -210,25 +207,25 @@
 
     /* Even smaller text size for small screens */
     .cloud-text-1 {
-        font-size: 0.6rem; /* Further reduce text size */
-        width: 200px; /* Adjust width for very small screens */
-        padding-top: 50px;
-        padding-right: 2px;
-        padding-left: 89px;
+        font-size: 1rem; /* Further reduce text size */
+        width: 310px; /* Adjust width for very small screens */
+        padding-top: 7rem;
+        padding-left: 8rem;
     }
 
     .cloud-text-2 {
-        font-size: 0.7rem; /* Further reduce text size */
-        width: 250px; /* Adjust width for very small screens */
-        padding-left: 0;
-        padding-right: 130px;
+        font-size: 1rem; /* Further reduce text size */
+        width: 310px; /* Adjust width for very small screens */
+        padding-left: 8rem;
+        padding-right: 1rem;
     }
 
     .cloud-text-3 {
-        font-size: 0.7rem; /* Further reduce text size */
-        width: 120px; /* Adjust width for very small screens */
-        padding-right: 10px;
-        padding-left: 0;
+        font-size: 1rem; /* Further reduce text size */
+        width: 310px; /* Adjust width for very small screens */
+        padding-right: 1rem;
+        padding-left: 9rem;
+        padding-top: 2rem;
     }
 
     .about-us-text h1 {
@@ -247,7 +244,38 @@
 /* Extremely small screens */
 @media (max-width: 480px) {
     .cloud-text-1 {
+        padding-right:4.5rem;
+        padding-left: 4.8rem;
         font-size: 0.6rem; /* Minimize text size for very small devices */
-        width: 130px;
+        width: 230px;
+    }
+
+    .cloud-text-2 {
+        font-size: 0.5rem; /* Further reduce text size */
+        width: 250px; /* Adjust width for very small screens */
+        padding-left: 4.3rem;
+        padding-right: 6.8rem;
+        padding-top: 1.8rem;
+    }
+
+    .cloud-text-3 {
+        font-size: 0.5rem; /* Further reduce text size */
+        width: 250px; /* Adjust width for very small screens */
+        padding-right: 6.7rem;
+        padding-left: 4.7rem;
+        padding-top: 3.5rem;
+    }
+
+    .seed-shaped {
+        margin-top: 15rem;
+        padding-left: 1rem;
+
+        position: relative; /* For positioning child elements */
+    }
+    
+    .seed-shaped img {
+        width: 100%; /* Take full width of the container */
+        height: 100%; /* Take full height of the container */
+        object-fit: contain; /* Ensure the whole image is contained without overflow */
     }
 }

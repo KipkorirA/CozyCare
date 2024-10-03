@@ -13,6 +13,8 @@ const ContactForm = () => {
 
     const [captchaValue, setCaptchaValue] = useState(null); // State for reCAPTCHA value
     const [isCaptchaValid, setIsCaptchaValid] = useState(false); // To validate reCAPTCHA
+    const [isLoading, setIsLoading] = useState(false); // Loading state
+    const [errorMessage, setErrorMessage] = useState(''); // Error message state
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,6 +29,7 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (isCaptchaValid) {
+            setIsLoading(true); // Start loading state
             try {
                 const response = await fetch('/api/contact', {
                     method: 'POST',
@@ -44,8 +47,11 @@ const ContactForm = () => {
                 alert("Your message has been sent successfully!");
                 setFormData({ firstName: '', lastName: '', phone: '', email: '', message: '' });
                 setIsCaptchaValid(false);
+                setCaptchaValue(null); // Reset captcha value
             } catch (error) {
-                alert("There was a problem sending your message: " + error.message);
+                setErrorMessage("There was a problem sending your message: " + error.message);
+            } finally {
+                setIsLoading(false); // End loading state
             }
         } else {
             alert("Please complete the reCAPTCHA.");
@@ -119,8 +125,13 @@ const ContactForm = () => {
                     />
                 </div>
 
+                {/* Error Message */}
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
+
                 {/* Submit Button */}
-                <button type="submit" className="submit-btn">Submit</button>
+                <button type="submit" className="submit-btn" disabled={isLoading}>
+                    {isLoading ? 'Submitting...' : 'Submit'}
+                </button>
             </form>
         </section>
     );

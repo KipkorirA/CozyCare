@@ -1,5 +1,18 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --primary-color: #f0a500;
+    --secondary-color: #053a09;
+    --text-color: #333;
+    --font-size-large: 2rem;
+    --font-size-medium: 1.2rem;
+    --font-size-small: 0.9rem;
+}
+
+
+/* Importing TT Hoves font */
+@font-face {
+    font-family: 'TT Hoves';
+    src: url('/path/to/TT_Hoves-Regular.woff2') format('woff2'), /* Replace with actual font file path */
+         url('/path/to/TT_Hoves-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }

@@ -10,16 +10,16 @@ const Pricing = () => {
                 <h1>PRICING</h1>
                 <hr className="pricing-divider" />
                 
-                <p>At Cozycare, we offer competitive pricing for our in-home care services. Our rates are flexible to suit the specific services you require and the frequency of care.</p>
+                <p>At CozyCare, we offer competitive pricing for our in-home care services. Our rates are flexible to suit the specific services you require and the frequency of care.</p>
                 
-                <p>Subscription Plans</p>
+                <h2>Subscription Plans</h2>
                 <ul>
                     <li>Hourly Plans: Pay for care on an hourly basis.</li>
                     <li>Monthly Plans: Enjoy discounted rates with monthly subscriptions.</li>
                     <li>Yearly Plans: Benefit from significant savings with annual subscriptions.</li>
                 </ul>
 
-                <p>Pay-Per-Service</p>
+                <h2>Pay-Per-Service</h2>
                 <ul>
                     <li>One-Time Payments: Pay for specific services as needed, such as occasional respite care or transportation.</li>
                 </ul>
@@ -33,7 +33,7 @@ const Pricing = () => {
                     
                     {/* Text inside the image */}
                     <div className="image-text">
-                        Factors that may affect pricing include:
+                        <h3>Factors that may affect pricing include:</h3>
                         <ul>
                             <li>Level of care: The intensity and complexity of the care required.</li>
                             <li>Frequency of care: The number of hours of care needed per week.</li>
@@ -46,8 +46,8 @@ const Pricing = () => {
                 {/* Paragraph below the image */}
                 <p>
                     To get a personalized quote, please contact us at 
-                    <a href="tel:[+254 700 697 430]" style={{ color: 'red', textDecoration: 'underline' }}> [Phone Number]</a> or 
-                    <a href="mailto:support@cozycare.com" style={{ color: 'red', textDecoration: 'underline' }}> support@cozycare.com</a>. 
+                    <a href="tel:+254700697430" className="contact-link"> [+254 700 697 430]</a> or 
+                    <a href="mailto:support@cozycare.com" className="contact-link"> support@cozycare.com</a>. 
                     We are happy to discuss your specific needs and provide you with a tailored pricing estimate.
                     Note: Prices are subject to change. Please contact us for the most up-to-date pricing information.
                 </p>

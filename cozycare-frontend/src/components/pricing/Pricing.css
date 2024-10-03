@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 4rem 2rem;
-    background-color: #dad4d47e;
+    background-color: #dad4d47e; /* Light background color for contrast */
 }
 
 /* Left Side - Pricing Info */
@@ -16,7 +16,7 @@
 
 .pricing-info h1 {
     font-size: 2.5rem;
-    color: #333;
+    color: #333; /* Dark color for headers */
     margin-bottom: 1rem;
 }
 
@@ -27,100 +27,99 @@
 }
 
 .pricing-info p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1.1rem; /* Slightly larger text */
+    line-height: 1.6; /* Increased line height for better readability */
     margin-bottom: 1.5rem;
-    color: #555;
-    padding-right: 80px;
+    color: #555; /* Medium gray color */
+    padding-right: 80px; /* Padding for right alignment */
 }
 
 .pricing-info ul {
     list-style-type: disc;
-    padding-left: 1.5rem;
+    padding-left: 1.5rem; /* Indentation for list items */
     margin-top: 0.5rem;
 }
 
 .pricing-info ul li {
-    margin-bottom: 0.5rem;
-    color: #444;
+    margin-bottom: 0.5rem; /* Space between list items */
+    color: #444; /* Darker color for list items */
 }
 
 /* Right Side - Image and Additional Info */
 .pricing-image-content {
-    width: 50%;
+    width: 50%; /* Fixed width for image content */
 }
 
 .image-with-text {
     position: relative;
     text-align: center;
-    width: 90%;
+    width: 90%; /* Ensures it doesn't exceed parent width */
 }
 
 .pricing-image-box {
-    width: 90%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+    width: 90%; /* Responsive image size */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover without distortion */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 1rem; /* Space below image */
 }
 
 .image-text {
     position: absolute;
-    top: 40%;
-    left: 45%;
-    transform: translate(-50%, -50%);
-    color: black;
-    padding: 1rem;
-    border-radius: 10px;
-    font-size: 0.8vw; /* Use viewport width for responsive text size */
-    text-align: left;
-    width: 70%; /* Ensure text width is relative to the image size */
-
+    top: 40%; /* Center text vertically */
+    left: 50%; /* Center text horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    color: black; /* Text color */
+    padding: 1rem; /* Padding around text */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 0.8vw; /* Responsive text size */
+    text-align: left; /* Left-align text */
+    width: 70%; /* Ensure text width is relative to image size */
 }
 
 .image-text ul {
-    list-style-type: disc;
+    list-style-type: disc; /* Bullet points for list */
     margin-top: 0.5rem;
 }
 
 .image-text ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem; /* Space between list items */
 }
 
 .pricing-image-content p {
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    color: #042e25;
-    line-height: 1.6;
+    margin-top: 1rem; /* Space above paragraph */
+    font-size: 1.1rem; /* Standard paragraph size */
+    color: #042e25; /* Dark green color for text */
+    line-height: 1.6; /* Line height for readability */
 }
 
+/* Contact Link Styling */
 .contact-link {
-    display: inline-block;
-    margin-top: 2rem;
-    padding: 0.5rem 1rem;
-    background-color: #042e25;
-    color: white;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Display as block element */
+    margin-top: 2rem; /* Space above link */
+    padding: 0.5rem 1rem; /* Padding for button */
+    color: red; /* Text color */
+    border-radius: 30px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    font-size: 1.2rem; /* Font size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 .contact-link:hover {
-    background-color: #54810c;
-    transform: translateY(-3px);
+    background-color: #54810c; /* Hover color */
+    transform: translateY(-3px); /* Lift effect on hover */
+    color: aliceblue;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .pricing-section {
-        flex-direction: column;
+        flex-direction: column; /* Stack elements vertically on small screens */
     }
 
     .pricing-info,
     .pricing-image-content {
-        width: 100%;
+        width: 100%; /* Full width on small screens */
     }
 
     /* Reduce font sizes on smaller screens */
