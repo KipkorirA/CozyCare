@@ -1,5 +1,4 @@
-// Import React and necessary components
-// import React from 'react';
+
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import HomeSection from './components/home/Home';
@@ -15,8 +14,10 @@ import PricingPage from './pages/PricingPage';
 import CareersPage from './pages/CareersPage';
 import FeedbackPage from './pages/FeedbackPage';
 import ContactPage from './pages/ContactPage';
-import SubscribePage from './pages/SubscribePage'; // Import the SubscribePage
-import TermsOfUsePage from './pages/TermsOfUsePage'; // Import the TermsOfUsePage
+import SubscribePage from './pages/SubscribePage';
+import TermsOfUsePage from './pages/TermsOfUsePage';
+import SubscriptionSuccessfulPage from './pages/SubscriptionSucccessfulPage';
+import NotFoundPage from './pages/NotFoundPage'; // Import the NotFoundPage
 import PrivacyAndCookiePolicyPage from './pages/PrivacyAndCookiePolicyPage'; // Import Privacy Policy Page
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -49,7 +50,11 @@ const App = () => {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/subscribe" element={<SubscribePage />} />
             <Route path="/terms-of-use" element={<TermsOfUsePage />} />
-            <Route path="/privacy-policy" element={<PrivacyAndCookiePolicyPage />} /> {/* Add Privacy Policy Page */}
+            <Route path="/privacy-policy" element={<PrivacyAndCookiePolicyPage />} />
+            <Route path="/subscription-successful" element={<SubscriptionSuccessfulPage />} />
+
+            {/* Catch all unmatched routes and render the NotFoundPage */}
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
 

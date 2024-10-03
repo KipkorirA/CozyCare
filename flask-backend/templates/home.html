@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CozyCare API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #2196F3;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the CozyCare API</h1>
+
+    <p>Use the following endpoints:</p>
+    <ul>
+        <li><a href="/reviews">View Submitted Reviews</a></li>
+        <li><a href="/subscriptions">View Submitted Subscriptions</a></li> <!-- Updated link to subscriptions -->
+    </ul>
+
+    <h2>Recent Feedback</h2>
+    <ul>
+        {% for feedback in feedback_list %}
+            <li>{{ feedback[1] }} - {{ feedback[2] }} stars: {{ feedback[3] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

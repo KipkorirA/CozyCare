@@ -28,7 +28,7 @@ const Feedback = () => {
             {/* Full-width background image (if needed) */}
             <div className="feedback-banner">
                 {/* You can add a background image here if required */}
-                <img src="/path/to/your/banner.jpg" alt="Feedback Banner" />
+                <img src="/src/components/feedback/Medicine.webp" alt="Feedback Banner" />
             </div>
 
             <div className="feedback-content">
@@ -52,7 +52,7 @@ const Feedback = () => {
             {/* Feedback comments */}
             <div className="feedback-cards">
                 {testimonials.length > 0 ? (
-                    testimonials.map((testimonial, index) => (
+                    testimonials.slice(0, 3).map((testimonial, index) => ( // Limit to the first 3 testimonials
                         <div className="feedback-card" key={index}>
                             <p>"{testimonial.text}"</p>
                             <div className="feedback-person">

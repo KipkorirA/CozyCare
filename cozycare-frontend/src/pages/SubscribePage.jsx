@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './styles/subscribePage.css'; // Custom CSS for styling
 
 const SubscribePage = () => {
@@ -8,22 +9,60 @@ const SubscribePage = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [preferredContact, setPreferredContact] = useState('email'); // Default to email
   const [interests, setInterests] = useState([]); // Store selected interests
-  const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false); // Loading state
+
+  // Initialize useNavigate
+  const navigate = useNavigate();
+
+  // Define the API base URL using environment variable
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
 
+  const validatePhoneNumber = (phone) => {
+    const re = /^[0-9-+\s()]*$/; // Simple regex to allow numbers, spaces, dashes, parentheses, and plus sign
+    return phone === '' || re.test(phone); // Allow empty for optional field
+  };
+
+  const validateForm = () => {
+    if (firstName.length < 2) {
+      setErrorMessage('First name must be at least 2 characters long.');
+      return false;
+    }
+    if (lastName.length < 2) {
+      setErrorMessage('Last name must be at least 2 characters long.');
+      return false;
+    }
+    if (!validateEmail(email)) {
+      setErrorMessage('Please enter a valid email address.');
+      return false;
+    }
+    if (!validatePhoneNumber(phoneNumber)) {
+      setErrorMessage('Please enter a valid phone number.');
+      return false;
+    }
+    return true;
+  };
+
+  const resetForm = () => {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setPhoneNumber('');
+    setInterests([]);
+  };
+
   const handleSubscription = async (e) => {
     e.preventDefault();
 
-    if (email && validateEmail(email)) {
+    if (validateForm()) {
       try {
         setIsLoading(true); // Start loading
-        const response = await fetch('http://localhost:5000/subscribe', {
+        const response = await fetch(`${API_BASE_URL}/subscribe`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -41,27 +80,17 @@ const SubscribePage = () => {
         const data = await response.json();
 
         if (response.ok) {
-          setSuccessMessage(data.message);
-          setErrorMessage('');
-          setFirstName(''); // Clear the first name input
-          setLastName(''); // Clear the last name input
-          setEmail(''); // Clear the email input
-          setPhoneNumber(''); // Clear the phone number input
-          setInterests([]); // Clear selected interests
+          resetForm(); // Clear the form fields
+          navigate('/subscription-successful'); // Redirect to the subscription successful page
         } else {
           setErrorMessage(data.message || 'Something went wrong.');
-          setSuccessMessage('');
         }
       } catch (error) {
         console.error('Error:', error);
         setErrorMessage('Failed to subscribe. Please try again later.');
-        setSuccessMessage('');
       } finally {
         setIsLoading(false); // End loading
       }
-    } else {
-      setErrorMessage('Please enter a valid email address.');
-      setSuccessMessage('');
     }
   };
 
@@ -166,10 +195,8 @@ const SubscribePage = () => {
         </button> {/* Disable when loading */}
       </form>
 
-      {/* Success Message */}
-      {successMessage && <p className="success-message">{successMessage}</p>}
       {/* Error Message */}
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <p className="error-message" aria-live="polite">{errorMessage}</p>}
       {isLoading && <p className="loading-message">Loading...</p>} {/* Loading Message */}
     </div>
   );

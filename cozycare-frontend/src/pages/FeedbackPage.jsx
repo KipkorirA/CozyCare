@@ -37,7 +37,7 @@ const Testimonials = ({ testimonials, loading, currentPage, testimonialsPerPage 
                     <p>{testimonial.text}</p>
                     {testimonial.image_url && (
                         <img
-                            src={`http://localhost:5000${testimonial.image_url}`} // Use the API URL
+                            src={`http://localhost:5000${testimonial.image_url}`} // Use the API URL for images
                             alt={`Image of ${testimonial.author}`}
                             className="client-image"
                         />

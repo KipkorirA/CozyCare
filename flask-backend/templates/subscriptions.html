@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscriber List</title>
+    <link rel="stylesheet" href="/static/subscriptions.css">  <!-- Add your custom CSS here -->
+</head>
+<body>
+    <div class="container">
+        <h1>Subscriber List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Preferred Contact</th>
+                    <th>Subscription Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subscriber in subscriber_list %}
+                <tr>
+                    <td>{{ subscriber[0] }}</td>
+                    <td>{{ subscriber[1] }}</td>
+                    <td>{{ subscriber[2] }}</td>
+                    <td>{{ subscriber[3] }}</td>
+                    <td>{{ subscriber[4] }}</td>
+                    <td>{{ subscriber[5] }}</td>
+                    <td>{{ subscriber[6].strftime('%Y-%m-%d') }}</td>  <!-- Format date -->
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7">No subscribers found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

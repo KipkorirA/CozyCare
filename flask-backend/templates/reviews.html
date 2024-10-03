@@ -1,0 +1,40 @@
+<!-- reviews.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="/static/reviews.css"> <!-- Optional CSS -->
+</head>
+<body>
+    <h1>User Reviews</h1>
+    <div class="reviews-container">
+        {% for review in reviews %}
+            <div class="review-item">
+                <h2>{{ review.name }}</h2>
+                <p>Rating: {{ review.rating }}</p>
+                <p>{{ review.feedback_text }}</p>
+                {% if review.image_url %}
+                    <img src="{{ review.image_url }}" alt="Review Image" class="review-image">
+                {% else %}
+                    <p>No image uploaded.</p>
+                {% endif %}
+                <p><em>Submitted on: {{ review.created_at }}</em></p>
+                <button onclick="deleteReview({{ review.id }})">Delete</button> <!-- Call to delete review -->
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        async function deleteReview(reviewId) {
+            const response = await fetch(`/reviews/delete/${reviewId}`, {
+                method: 'DELETE'
+            });
+            const data = await response.json();
+            alert(data.message);
+            location.reload(); // Reload the page after deletion
+        }
+    </script>
+</body>
+</html>
